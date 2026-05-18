@@ -1,0 +1,148 @@
+# ──────────────────────────────────────────────────────────────
+# Copy this file to ads.yaml and customise it with your own ads.
+# ──────────────────────────────────────────────────────────────
+
+# ──────────────────────────────────────────────────────────────
+# Global settings
+# ──────────────────────────────────────────────────────────────
+global:
+  page_duration: 20      # seconds each page is displayed
+  order: sequential      # sequential | random
+  random_start: true     # true to begin at a random page each time
+  line_delay: 0.12       # seconds between each line appearing
+  crt_effects: true      # false to disable scanlines and vignette
+  audio:
+    folder: music        # relative to public/
+    shuffle: true        # true to randomise track order
+    volume: 0.6          # 0.0 – 1.0
+
+# ──────────────────────────────────────────────────────────────
+# Colour palette
+#
+#  0  black       1  dark-blue    2  dark-purple   3  dark-green
+#  4  brown       5  dark-grey    6  light-grey     7  white
+#  8  red         9  orange      10  yellow        11  green
+# 12  blue       13  lavender    14  pink          15  peach
+# ──────────────────────────────────────────────────────────────
+
+pages:
+
+  # ── 1. Example: Pizza restaurant ──────────────────────────────
+  - bg: 8
+    lines:
+      - type: text          # blank top spacer — match bg and color to page bg
+        text: ""
+        bg: 8
+        color: 8
+        height: 1
+      - type: text          # channel header
+        text: "1990s Cable TV Ads"
+        bg: 8
+        color: 7
+        height: 1
+      - type: datetime      # live clock — always use this format
+        format: "%a %b %d, %Y  TIME  %-I:%M:%S %p"
+        bg: 5
+        color: 10
+        height: 1
+        caps: true
+      - type: text          # hero title — keep to ~20 characters to avoid wrapping
+        text: "MARIO'S PIZZA"
+        bg: 9
+        color: 7
+        height: 2
+        caps: true
+      - type: text          # blinking highlight line
+        text: "2 LARGE PIZZAS - ONLY $9.99!"
+        bg: 0
+        color: 10
+        height: 1
+        caps: true
+        blink: true
+        blink_interval: 0.6
+      - type: block         # two-line content block
+        bg: 7
+        color: 8
+        height: 1
+        caps: true
+        inverted: true
+        lines:
+          - "FREE DELIVERY  *  OPEN LATE"
+          - "SUN-THU 11AM-11PM  FRI-SAT 11AM-1AM"
+      - type: text
+        text: "123 MAIN STREET"
+        bg: 9
+        color: 0
+        height: 1
+        caps: true
+      - type: text          # second standalone line
+        text: "CALL NOW: 555-0199"
+        bg: 8
+        color: 7
+        height: 1
+        caps: true
+      - type: text          # blank bottom spacer — match bg and color to page bg
+        text: ""
+        bg: 8
+        color: 8
+        height: 1
+
+  # ── 2. Example: Hair salon ─────────────────────────────────────
+  - bg: 13
+    lines:
+      - type: text
+        text: ""
+        bg: 13
+        color: 13
+        height: 1
+      - type: text
+        text: "1990s Cable TV Ads"
+        bg: 13
+        color: 7
+        height: 1
+      - type: datetime
+        format: "%a %b %d, %Y  TIME  %-I:%M:%S %p"
+        bg: 5
+        color: 10
+        height: 1
+        caps: true
+      - type: text
+        text: "CURL UP & DYE"
+        bg: 14
+        color: 1
+        height: 2
+        caps: true
+      - type: text
+        text: "WALK-INS WELCOME!"
+        bg: 14
+        color: 0
+        height: 1
+        caps: true
+        blink: true
+        blink_interval: 0.7
+      - type: block
+        bg: 7
+        color: 2
+        height: 1
+        caps: true
+        inverted: true
+        lines:
+          - "CUTS  *  COLOR  *  PERMS"
+          - "HIGHLIGHTS  *  ALL STYLES"
+      - type: text
+        text: "MAIN STREET PLAZA  *  555-0231"
+        bg: 13
+        color: 7
+        height: 1
+        caps: true
+      - type: text
+        text: "OPEN MON-SAT  9AM-6PM"
+        bg: 14
+        color: 1
+        height: 1
+        caps: true
+      - type: text
+        text: ""
+        bg: 13
+        color: 13
+        height: 1

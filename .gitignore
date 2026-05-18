@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Real ads — keep private, deploy locally via: npx wrangler pages deploy dist
+public/ads.yaml
+
+# Music files — keep private
+public/music/aberrantrealities-consider-it-done.mp3
+public/music/manifest.json
+
+# Vite cache
+.vite/
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# Editor directories
+.DS_Store
+.idea/
+.vscode/
+
+# Claude Code
+.claude/
