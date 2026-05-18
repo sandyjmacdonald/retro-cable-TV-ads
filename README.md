@@ -183,7 +183,7 @@ global:
   audio:
     folder: music     # relative to public/ — change if you use a different folder name
     shuffle: true     # true to randomise track order, false to play in sequence
-    volume: 0.6       # 0.0 (silent) to 1.0 (full volume)
+    volume: 0.75      # 0.0 (silent) to 1.0 (full volume)
 ```
 
 3. That's it. The app picks up all files in the folder automatically — no list to maintain. Changes to the folder take effect on the next page load.
