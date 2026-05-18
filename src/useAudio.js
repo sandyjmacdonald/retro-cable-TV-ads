@@ -10,9 +10,10 @@ function shuffle(arr) {
 }
 
 export function useAudio(audioConfig) {
-  const audioRef  = useRef(null);
-  const tracksRef = useRef([]);
-  const indexRef  = useRef(0);
+  const audioRef     = useRef(null);
+  const tracksRef    = useRef([]);
+  const indexRef     = useRef(0);
+  const firstPlayRef = useRef(true);
   const [blocked, setBlocked] = useState(false);
 
   useEffect(() => {
@@ -23,11 +24,20 @@ export function useAudio(audioConfig) {
     function playTrack() {
       const el = audioRef.current;
       if (!el || !tracksRef.current.length) return;
-      el.src    = tracksRef.current[indexRef.current];
       el.volume = volume;
-      el.play()
-        .then(() => setBlocked(false))
-        .catch(() => setBlocked(true));
+
+      if (firstPlayRef.current) {
+        firstPlayRef.current = false;
+        el.addEventListener('loadedmetadata', function seekRandom() {
+          el.removeEventListener('loadedmetadata', seekRandom);
+          el.currentTime = Math.random() * el.duration;
+          el.play().then(() => setBlocked(false)).catch(() => setBlocked(true));
+        });
+      } else {
+        el.play().then(() => setBlocked(false)).catch(() => setBlocked(true));
+      }
+
+      el.src = tracksRef.current[indexRef.current];
     }
 
     function onEnded() {
@@ -40,7 +50,7 @@ export function useAudio(audioConfig) {
       .then(files => {
         const tracks = files.map(f => `/${folder}/${f}`);
         tracksRef.current = doShuffle ? shuffle(tracks) : tracks;
-        indexRef.current  = 0;
+        indexRef.current  = Math.floor(Math.random() * tracksRef.current.length);
         playTrack();
       })
       .catch(err => console.warn('Audio manifest load failed:', err));

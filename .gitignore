@@ -4,12 +4,15 @@ node_modules/
 # Build output
 dist/
 
+# Cloudflare Wrangler config — keep private
+wrangler.jsonc
+
 # Real ads — keep private, deploy locally via: npx wrangler pages deploy dist
 public/ads.yaml
 
 # Music files — keep private
-public/music/aberrantrealities-consider-it-done.mp3
-public/music/manifest.json
+public/music/*
+!public/music/.gitkeep
 
 # Vite cache
 .vite/
