@@ -32,6 +32,9 @@ export default function App() {
         if (cfg.global?.random_start) {
           setOrderIdx(Math.floor(Math.random() * pageOrder.current.length));
         }
+        if (cfg.global?.page_title) {
+          document.title = cfg.global.page_title;
+        }
         setConfig(cfg);
       })
       .catch(err => setError(err.message));
