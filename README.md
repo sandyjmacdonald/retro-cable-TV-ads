@@ -1,4 +1,4 @@
-# Palisade CableVision
+# Retro Cable TV Ads
 
 A recreation of a 1990s cable TV guide channel, built with Preact and Vite. Pages are driven by `public/ads.yaml` — no rebuild needed when you change ads or music.
 
@@ -19,7 +19,7 @@ nvm install --lts
 ### 2. Install dependencies and build
 
 ```bash
-cd /path/to/1990s-cable-tv-ads
+cd /path/to/retro-cable-tv-ads
 npm install
 npm run build
 ```
