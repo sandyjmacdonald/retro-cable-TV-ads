@@ -14,7 +14,7 @@ global:
   audio:
     folder: music        # relative to public/
     shuffle: true        # true to randomise track order
-    volume: 0.6          # 0.0 – 1.0
+    volume: 0.75          # 0.0 – 1.0
 
 # ──────────────────────────────────────────────────────────────
 # Colour palette
