@@ -22,6 +22,7 @@ export default function AdLine({ line }) {
 
   const height   = line.height === 2 ? 2 : 1;
   const inverted = !!line.inverted;
+  const bold     = !!line.bold;
   const align    = line.align ?? 'center';
 
   // Normal: coloured bar behind the whole line, text in fg colour.
@@ -58,6 +59,7 @@ export default function AdLine({ line }) {
           fontSize: `${fontVh}vh`,
           lineHeight: 1,
           color: textColor,
+          fontWeight: bold ? 'bold' : 'normal',
           letterSpacing: '0.04em',
           textAlign: align,
           visibility: show ? 'visible' : 'hidden',
