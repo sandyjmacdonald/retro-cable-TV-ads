@@ -1,6 +1,6 @@
 # Retro Cable TV Ads
 
-A recreation of a 1990s cable TV guide channel, built with Preact and Vite. Pages are driven by `public/ads.yaml` — no rebuild needed when you change ads or music.
+A recreation of an early 1990s cable TV guide channel, built with Preact and Vite. Pages are driven by `public/ads.yaml` — no rebuild needed when you change ads or music.
 
 ---
 
