@@ -68,7 +68,10 @@ export default function App() {
   const pageIndex = pageOrder.current[orderIdx];
   const page       = config.pages[pageIndex];
   const lineDelay  = config.global?.line_delay ?? 0.1;
-  const crtEffects = config.global?.crt_effects ?? true;
+  const crtParam   = new URLSearchParams(window.location.search).get('crt');
+  const crtEffects = crtParam !== null
+    ? (crtParam !== '0' && crtParam !== 'false')
+    : (config.global?.crt_effects ?? true);
   const { audioRef, blocked, unblock } = useAudio(config.global?.audio ?? null);
 
   return (

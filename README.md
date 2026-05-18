@@ -164,9 +164,37 @@ A standard page uses: 1 + 1 + 1 + 2 + 1 + 2 + 1 + 1 + 1 = **11 rows**.
 | Property         | Values              | Description                                  |
 |------------------|---------------------|----------------------------------------------|
 | `caps`           | `true`              | Renders text in uppercase                    |
+| `bold`           | `true`              | Renders text in bold                         |
 | `blink`          | `true`              | Enables blinking                             |
 | `blink_interval` | seconds (e.g. `0.6`)| How fast the line blinks                    |
 | `inverted`       | `true`              | Swaps `bg` and `color`                       |
+
+---
+
+## CRT effects
+
+The app includes several effects to simulate an old CRT television:
+
+- **Scanlines** — subtle horizontal lines across the whole display
+- **Vignette** — darkening towards the edges and corners
+- **Corner blur** — soft focus at the edges, mimicking a CRT tube
+- **Noise/static** — faint animated pixel grain
+
+CRT effects are enabled by default. To disable them, set `crt_effects: false` in the `global` section of `ads.yaml`:
+
+```yaml
+global:
+  crt_effects: false
+```
+
+You can also override the `ads.yaml` setting via a URL parameter, which is useful for screenshots or when deploying to different environments:
+
+| URL | Effect |
+|-----|--------|
+| `?crt=1` | Force CRT effects **on** |
+| `?crt=0` | Force CRT effects **off** |
+
+The URL parameter takes precedence over `ads.yaml`.
 
 ---
 
