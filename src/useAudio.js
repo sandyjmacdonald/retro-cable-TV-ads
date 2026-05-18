@@ -33,11 +33,11 @@ export function useAudio(audioConfig) {
           el.currentTime = Math.random() * el.duration;
           el.play().then(() => setBlocked(false)).catch(() => setBlocked(true));
         });
+        el.src = tracksRef.current[indexRef.current];
       } else {
+        el.src = tracksRef.current[indexRef.current];
         el.play().then(() => setBlocked(false)).catch(() => setBlocked(true));
       }
-
-      el.src = tracksRef.current[indexRef.current];
     }
 
     function onEnded() {
