@@ -1,3 +1,12 @@
+> [!IMPORTANT]
+> **This repository has moved to Codeberg.**
+>
+> Active development now happens at **[https://codeberg.org/sandyjmacdonald/retro-cable-TV-ads](https://codeberg.org/sandyjmacdonald/retro-cable-TV-ads)**.
+>
+> This GitHub copy is archived and read-only. Please file issues, open pull requests, and follow the project on Codeberg.
+
+---
+
 # Retro Cable TV Ads
 
 A recreation of an early 1990s cable TV guide channel, built with Preact and Vite. Pages are driven by `public/ads.yaml` — no rebuild needed when you change ads or music.
